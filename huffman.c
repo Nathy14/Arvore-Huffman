@@ -1,34 +1,10 @@
-#include "list.h"
+#include "commons.h"
 
-static void print_list(struct list_t *list)
-{
-    printf("\n");
-    for (struct node *aux = list->head;aux != NULL;aux = aux->next) {
-        printf("%d ", aux->value->root->data);
-    }
-    printf("\n");
-}
-
-/**
- * swap de nodes da lista.
- */
-static void swap(struct node *current, struct node *next)
-{
-    struct node new_current = *current;
-    struct node new_next = *next;
-
-    new_current.next = new_next.next;
-    new_next.prev = new_current.prev;
-
-    new_current.prev->next = &new_next;
-    new_next.next->prev = &new_current;
-
-    new_current.prev = &new_next;
-    new_next.next = &new_current;
-
-    current = &new_next;
-    next = &new_current;
-}
+struct tree_node {
+    struct tree_node *left;
+    struct tree_node *right;
+    int data;
+};
 
 struct tree_node *create_tree(int data, struct tree_node *right, struct tree_node *left)
 {
