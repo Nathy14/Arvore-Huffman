@@ -1,0 +1,9 @@
+Árvore de Huffman
+
+
+4 2 1 3 
+aux->next: 1
+current->next: 1
+next->next: 1
+
+4 2 1 3 
