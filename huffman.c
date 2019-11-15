@@ -4,9 +4,11 @@ struct tree_node {
     struct tree_node *left;
     struct tree_node *right;
     int data;
+    char letter;
 };
 
-struct tree_node *create_tree(int data, struct tree_node *right, struct tree_node *left)
+struct tree_node *create_tree(int data, struct tree_node *right,
+                              struct tree_node *left)
 {
     struct tree_node *root = (struct tree_node *)smalloc(sizeof(struct tree_node *));
     root->left = left;
@@ -107,6 +109,7 @@ int main()
     puts("");
 
     printTree(trees[0]);
+    puts("");
 
     return 0;
 }

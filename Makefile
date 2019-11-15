@@ -3,6 +3,8 @@ CC=gcc
 huffman:
 	mkdir -p bin
 	$(CC) commons.c huffman.c -o bin/huffman
+	@./bin/huffman
+	@rm -rf bin/*
 
 all:
 	mkdir -p bin
